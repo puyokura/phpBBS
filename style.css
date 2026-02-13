@@ -1,0 +1,96 @@
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 14px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+a { color: #006699; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+    border-bottom: 2px solid #006699;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+header h1 { font-size: 18px; margin: 0; display: inline-block; }
+h1 { font-size: 18px; margin: 0; }
+.nav { float: right; font-size: 13px; }
+
+h2 {
+    font-size: 16px;
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 20px 0 10px 0;
+    border-left: 5px solid #006699;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* Thread List Table Style */
+.thread-list .thread-item {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.thread-item a { font-weight: bold; font-size: 15px; }
+.thread-meta { font-size: 12px; color: #666; }
+
+/* Post Style */
+.post {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.post-meta {
+    background-color: #f0f0f0;
+    padding: 3px 5px;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+}
+.post-body {
+    padding: 0 10px;
+    line-height: 1.5;
+}
+
+/* Markdown H1 in posts and content */
+.post-body h1, .card h1 {
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin: 15px 0 5px 0;
+    padding-bottom: 3px;
+    /* Reset line-height to avoid huge gaps if br leaks */
+    line-height: 1.4; 
+}
+
+/* Forms */
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+textarea { height: 100px; }
+
+button {
+    background: #eee;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+button:hover { background: #ddd; }
