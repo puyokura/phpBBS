@@ -29,6 +29,7 @@ $queries = [
         id TEXT PRIMARY KEY,
         title TEXT NOT NULL,
         user_id TEXT NOT NULL,
+        is_hidden INTEGER DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
@@ -38,8 +39,31 @@ $queries = [
         thread_id TEXT NOT NULL,
         user_id TEXT NOT NULL,
         body TEXT NOT NULL,
+        is_hidden INTEGER DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (thread_id) REFERENCES threads(id),
+        FOREIGN KEY (user_id) REFERENCES users(id)
+    )",
+    "CREATE TABLE IF NOT EXISTS requests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id TEXT NOT NULL,
+        body TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id)
+    )",
+    "CREATE TABLE IF NOT EXISTS changelogs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        body TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )",
+    "CREATE TABLE IF NOT EXISTS admin_logs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id TEXT NOT NULL,
+        target_type TEXT,
+        target_id TEXT,
+        action TEXT NOT NULL,
+        details TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
     )",
     "CREATE TABLE IF NOT EXISTS config (

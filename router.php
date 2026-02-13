@@ -23,6 +23,12 @@ switch ($uri) {
     case '/admin':
         require 'admin.php';
         break;
+    case '/request':
+        require 'request.php';
+        break;
+    case '/changelog':
+        require 'changelog.php';
+        break;
     default:
         http_response_code(404);
         echo "404 Not Found";
